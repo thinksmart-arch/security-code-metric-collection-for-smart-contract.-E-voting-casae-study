@@ -1,0 +1,244 @@
+E-voting smart contract 
+
+methods 
+-------
+
+Constructor 
+
+giveRightToVote 
+
+delegate 
+
+winningProposal 
+
+vote 
+
+ 
+
+ 
+
+ 
+
+WMC/DIT/CBO/McC/ 
+
+Have been get automatically (Solmet) 
+----------------------------------------
+ 
+
+NOC 
+
+NOC=0 
+
+Check existence of ihneritance architecture of the contract-based application(Evoting) 
+
+--> No inheritance architecture 
+
+ 
+
+ 
+
+RFC 
+
+RFC=5 
+
+Identify all the method of the class(not include inherited method)) 
+
+-->5 
+
+Identify all the distinct methods call by each method identify above 
+
+-->0 
+
+ 
+
+ 
+
+LCOM metric calculation 
+
+LCOM=0 given |P|=1 < |Q|=9 
+
+constructor/giveRightToVote  -YES 
+
+constructor/delegate-YES 
+
+construct/winningProposal-YES 
+
+construct/vote-YES 
+
+ 
+
+giRightToVote/ delegate-YES 
+
+giRightToVote/ winningProposal-NO 
+
+giRightToVote/ vote-YES 
+
+ 
+
+delegate/Constructor* 
+
+delegate/ giveRightToVote* 
+
+delegate/ winningProposal-YES 
+
+delegate/ vote-YES 
+
+ 
+
+winningProposal/ Constructor* 
+
+winningProposal/ giveRightToVote* 
+
+winningProposal/ delegate* 
+
+winningProposal/ vote-YES 
+
+ 
+
+vote/ Constructor* 
+
+vote/ giveRightToVote* 
+
+ 
+
+vote/ delegate* 
+
+vote/ winningProposal* 
+
+ 
+
+delegate/ 
+
+ 
+
+ 
+
+ 
+
+Stall Ratio 
+
+SR =0. 
+
+ 
+
+Got 2 loop statement: “while” from “delegate” method and “for” from “winningProposal” 
+
+Analyse both loop: 
+
+None of these loops possess stall statement (relative to the tardiness of the program) 
+
+ 
+
+ 
+
+ 
+
+CPP 
+
+CPP=0 
+
+Identify on the all the method with parameter 
+
+-> constructor/ giveRightToVote/delegate/ vote 
+
+Identify of child methods with parameter based on the parameter from method identify above 
+
+-> none  
+
+CER 
+
+CER=5/5=1 
+
+Identify all dataelement might be critical for the contract: 
+
+Criteria of criticality :   
+
+1 non primitive type (int/uint....unless this element with this type migth really impact  an important decision in the program) ---> none 
+
+2-dataelement with complex structure that may be is assigned value or part of decision --->5  
+
+Total number of element in the contract 
+
+--> 5 (there is no uncritical dataElement in this contract) 
+
+ 
+
+ 
+
+Nex 
+
+Nex=0 
+
+Identify exception handling statement in the program (try catch/require/assert) 
+
+->None 
+
+ 
+
+ 
+
+Noex 
+
+Noex=7 
+
+Identify the possible statement able to lead to exception and check if that exception handling statement are been define for them.  
+
+--> if (msg.sender != chairperson || voters[toVoter].voted) return;/ while (voters[to].delegate != address(0) && voters[to].delegate != msg.sender) / proposals[delegateTo.vote].voteCount += sender.weight; /if (sender.voted || toProposal >= proposals.length) return; /  if (proposals[prop].voteCount > winningVoteCount)/ proposals[toProposal].voteCount += sender.weight;/ delegateTo.weight += sender.weight; 
+
+  -> 7 
+
+ 
+
+ 
+
+Roex 
+
+Roex=1; Nex=0 , Noex=7 and  Noex+Nex=7 
+
+ 
+
+Halsted volume 
+
+Volume: V=N*logs n= 1862.29 
+
+Identify all following values: 
+
+n1= the number of distinct operators  
+
+n2= the number of distinct operands  
+
+N1= the total number of operators 
+
+N2= the total number of operands- 
+
+N=N1+N2 
+
+N=n1+n2 
+
+Link: https://studentmailuwsac-my.sharepoint.com/:x:/r/personal/abouaangekevin_n'da_uws_ac_uk/_layouts/15/Doc.aspx?sourcedoc=%7B822E9CBA-ADAD-4DAC-BCFD-68348E238AE6%7D&file=Result_for_RQ2_of_metric_study.xlsx&action=default&mobileredirect=true 
+
+(HM calculus tab) 
+
+ 
+
+NCBC 
+
+NCBC=0 
+
+Identify all exception handling statement in the contract 
+
+->0 
+
+Number of possible exception handling statement 
+
+->7 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
